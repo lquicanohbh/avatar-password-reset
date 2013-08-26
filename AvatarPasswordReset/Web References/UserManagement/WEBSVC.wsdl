@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s0="http://tempuri.org" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:element name="ActivateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="SystemCode" type="s:string" />
+            <s:element minOccurs="0" name="UserName" type="s:string" />
+            <s:element minOccurs="0" name="Password" type="s:string" />
+            <s:element minOccurs="0" name="User" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="ActivateUserResult" type="s0:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WebServiceResponse">
+        <s:sequence>
+          <s:element minOccurs="0" name="Confirmation" type="s:string" />
+          <s:element minOccurs="0" name="Message" type="s:string" />
+          <s:element minOccurs="0" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" name="ResponseObjects" type="s0:ArrayOfResponseObjectResponseObject" />
+          <s:element minOccurs="0" name="Status" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfResponseObjectResponseObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseObject" nillable="true" type="s0:ResponseObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponseObject">
+        <s:sequence>
+          <s:element minOccurs="0" name="Confirmation" type="s:string" />
+          <s:element minOccurs="0" name="Message" type="s:string" />
+          <s:element minOccurs="0" name="Status" type="s:long" />
+          <s:element minOccurs="0" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" name="UniqueID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="SystemCode" type="s:string" />
+            <s:element minOccurs="0" name="UserName" type="s:string" />
+            <s:element minOccurs="0" name="Password" type="s:string" />
+            <s:element minOccurs="0" name="UserDefinition" type="s0:UserDefinitionObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserDefinitionObject">
+        <s:sequence>
+          <s:element minOccurs="0" name="AllowUserRenewal" type="s:string" />
+          <s:element minOccurs="0" name="AllowUserToModPrtFonts" type="s:string" />
+          <s:element minOccurs="0" name="IsUserAStaffMember" type="s:string" />
+          <s:element minOccurs="0" name="IsUserAUnit" type="s:string" />
+          <s:element minOccurs="0" name="IsUserSystemAdministrator" type="s:string" />
+          <s:element minOccurs="0" name="PasswordTermDurationDays" type="s:long" />
+          <s:element minOccurs="0" name="PreventUserFromAppLogout" type="s:string" />
+          <s:element minOccurs="0" name="PreventUsrAcsToNonCaseClt" type="s:string" />
+          <s:element minOccurs="0" name="PromptForUsernameAtOptEnt" type="s:string" />
+          <s:element minOccurs="0" name="ReminderNoticeNumDays" type="s:long" />
+          <s:element minOccurs="0" name="ReqFilingAuthForAppOpts" type="s:string" />
+          <s:element minOccurs="0" name="StaffId" type="s:string" />
+          <s:element minOccurs="0" name="UnitId" type="s:string" />
+          <s:element minOccurs="0" name="UserDescription" type="s:string" />
+          <s:element minOccurs="0" name="UserId" type="s:string" />
+          <s:element minOccurs="0" name="UserRoles" type="s:string" />
+          <s:element minOccurs="0" name="UserSecurityLevel" type="s:string" />
+          <s:element minOccurs="0" name="UserTimeoutSecond" type="s:long" />
+          <s:element minOccurs="0" name="WarnNonCaseloadAccess" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="CreateUserResult" type="s0:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeActivateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="SystemCode" type="s:string" />
+            <s:element minOccurs="0" name="UserName" type="s:string" />
+            <s:element minOccurs="0" name="Password" type="s:string" />
+            <s:element minOccurs="0" name="User" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeActivateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="DeActivateUserResult" type="s0:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoesUserExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="SystemCode" type="s:string" />
+            <s:element minOccurs="0" name="UserName" type="s:string" />
+            <s:element minOccurs="0" name="Password" type="s:string" />
+            <s:element minOccurs="0" name="User" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoesUserExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="DoesUserExistResult" type="s0:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneratePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="SystemCode" type="s:string" />
+            <s:element minOccurs="0" name="UserName" type="s:string" />
+            <s:element minOccurs="0" name="Password" type="s:string" />
+            <s:element minOccurs="0" name="User" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneratePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GeneratePasswordResult" type="s0:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDictionaryItems">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="SystemCode" type="s:string" />
+            <s:element minOccurs="0" name="UserName" type="s:string" />
+            <s:element minOccurs="0" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDictionaryItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetDictionaryItemsResult" type="s0:ArrayOfDictionaryItemObjectDictionaryItemObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDictionaryItemObjectDictionaryItemObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DictionaryItemObject" nillable="true" type="s0:DictionaryItemObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DictionaryItemObject">
+        <s:sequence>
+          <s:element minOccurs="0" name="DictionaryCode" type="s:string" />
+          <s:element minOccurs="0" name="DictionaryFieldDescription" type="s:string" />
+          <s:element minOccurs="0" name="DictionaryUniqueId" type="s:string" />
+          <s:element minOccurs="0" name="DictionaryValue" type="s:string" />
+          <s:element minOccurs="0" name="Mesg" type="s:string" />
+          <s:element minOccurs="0" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserRoleList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="SystemCode" type="s:string" />
+            <s:element minOccurs="0" name="UserName" type="s:string" />
+            <s:element minOccurs="0" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserRoleListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetUserRoleListResult" type="s0:ArrayOfUserRoleObjectUserRoleObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserRoleObjectUserRoleObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserRoleObject" nillable="true" type="s0:UserRoleObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserRoleObject">
+        <s:sequence>
+          <s:element minOccurs="0" name="Mesg" type="s:string" />
+          <s:element minOccurs="0" name="RoleDescription" type="s:string" />
+          <s:element minOccurs="0" name="RoleId" type="s:string" />
+          <s:element minOccurs="0" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IsUserActive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="SystemCode" type="s:string" />
+            <s:element minOccurs="0" name="UserName" type="s:string" />
+            <s:element minOccurs="0" name="Password" type="s:string" />
+            <s:element minOccurs="0" name="User" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserActiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="IsUserActiveResult" type="s0:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="SystemCode" type="s:string" />
+            <s:element minOccurs="0" name="UserName" type="s:string" />
+            <s:element minOccurs="0" name="Password" type="s:string" />
+            <s:element minOccurs="0" name="UserDefinition" type="s0:UserDefinitionObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="UpdateUserResult" type="s0:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ActivateUserSoapIn">
+    <wsdl:part name="parameters" element="s0:ActivateUser" />
+  </wsdl:message>
+  <wsdl:message name="ActivateUserSoapOut">
+    <wsdl:part name="parameters" element="s0:ActivateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserSoapIn">
+    <wsdl:part name="parameters" element="s0:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserSoapOut">
+    <wsdl:part name="parameters" element="s0:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeActivateUserSoapIn">
+    <wsdl:part name="parameters" element="s0:DeActivateUser" />
+  </wsdl:message>
+  <wsdl:message name="DeActivateUserSoapOut">
+    <wsdl:part name="parameters" element="s0:DeActivateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoesUserExistSoapIn">
+    <wsdl:part name="parameters" element="s0:DoesUserExist" />
+  </wsdl:message>
+  <wsdl:message name="DoesUserExistSoapOut">
+    <wsdl:part name="parameters" element="s0:DoesUserExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeneratePasswordSoapIn">
+    <wsdl:part name="parameters" element="s0:GeneratePassword" />
+  </wsdl:message>
+  <wsdl:message name="GeneratePasswordSoapOut">
+    <wsdl:part name="parameters" element="s0:GeneratePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDictionaryItemsSoapIn">
+    <wsdl:part name="parameters" element="s0:GetDictionaryItems" />
+  </wsdl:message>
+  <wsdl:message name="GetDictionaryItemsSoapOut">
+    <wsdl:part name="parameters" element="s0:GetDictionaryItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRoleListSoapIn">
+    <wsdl:part name="parameters" element="s0:GetUserRoleList" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRoleListSoapOut">
+    <wsdl:part name="parameters" element="s0:GetUserRoleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserActiveSoapIn">
+    <wsdl:part name="parameters" element="s0:IsUserActive" />
+  </wsdl:message>
+  <wsdl:message name="IsUserActiveSoapOut">
+    <wsdl:part name="parameters" element="s0:IsUserActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserSoapIn">
+    <wsdl:part name="parameters" element="s0:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserSoapOut">
+    <wsdl:part name="parameters" element="s0:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServicesSoap">
+    <wsdl:operation name="ActivateUser">
+      <wsdl:input message="s0:ActivateUserSoapIn" />
+      <wsdl:output message="s0:ActivateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input message="s0:CreateUserSoapIn" />
+      <wsdl:output message="s0:CreateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeActivateUser">
+      <wsdl:input message="s0:DeActivateUserSoapIn" />
+      <wsdl:output message="s0:DeActivateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoesUserExist">
+      <wsdl:input message="s0:DoesUserExistSoapIn" />
+      <wsdl:output message="s0:DoesUserExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePassword">
+      <wsdl:input message="s0:GeneratePasswordSoapIn" />
+      <wsdl:output message="s0:GeneratePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDictionaryItems">
+      <wsdl:input message="s0:GetDictionaryItemsSoapIn" />
+      <wsdl:output message="s0:GetDictionaryItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleList">
+      <wsdl:input message="s0:GetUserRoleListSoapIn" />
+      <wsdl:output message="s0:GetUserRoleListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserActive">
+      <wsdl:input message="s0:IsUserActiveSoapIn" />
+      <wsdl:output message="s0:IsUserActiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input message="s0:UpdateUserSoapIn" />
+      <wsdl:output message="s0:UpdateUserSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServicesSoap" type="s0:WebServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ActivateUser">
+      <soap:operation soapAction="http://tempuri.org/WEBSVC.UserManagement.ActivateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/WEBSVC.UserManagement.CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeActivateUser">
+      <soap:operation soapAction="http://tempuri.org/WEBSVC.UserManagement.DeActivateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoesUserExist">
+      <soap:operation soapAction="http://tempuri.org/WEBSVC.UserManagement.DoesUserExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePassword">
+      <soap:operation soapAction="http://tempuri.org/WEBSVC.UserManagement.GeneratePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDictionaryItems">
+      <soap:operation soapAction="http://tempuri.org/WEBSVC.UserManagement.GetDictionaryItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleList">
+      <soap:operation soapAction="http://tempuri.org/WEBSVC.UserManagement.GetUserRoleList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserActive">
+      <soap:operation soapAction="http://tempuri.org/WEBSVC.UserManagement.IsUserActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/WEBSVC.UserManagement.UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServices">
+    <wsdl:port name="WebServicesSoap" binding="s0:WebServicesSoap">
+      <soap:address location="http://avtest:8972/csp/hmhcpmlive//WEBSVC.UserManagement.cls" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
